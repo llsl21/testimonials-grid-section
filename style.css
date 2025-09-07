@@ -20,10 +20,14 @@
   --white: hsl(0deg 0% 100%);
   --grey100: hsl(214deg 17% 92%);
   --grey200: hsl(0deg 0% 81%);
+  --grey300: hsl(215deg 10% 67%);
   --grey400: hsl(224deg 10% 45%);
   --grey500: hsl(217deg 19% 35%);
   --darkblue: hsl(219deg 29% 14%);
   --black: hsl(0deg 0% 7%);
+  --body-background: hsl(300deg 5% 96%);
+  --shadow-sm: 0 4px 4px 0 hsl(0deg 0% 0% / 0.25);
+  --shadow-lg: 40px 60px 50px -47px hsl(217deg 19% 35% / 0.24);
 
   --text-preset-1: normal 600 20px / 1.2 "Barlow", sans-serif;
   --text-preset-2: normal 500 13px / 1.1 "Barlow", sans-serif;
@@ -40,4 +44,181 @@
 }
 
 body {
+  background-color: var(--body-background);
+  padding-block: 73px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.cards {
+  max-width: 305px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-sm), var(--shadow-lg);
+}
+
+.card:nth-child(1) {
+  background-color: var(--primary500);
+  color: var(--white);
+
+  .avatar-img-wrapper {
+    box-shadow: 0 0 0 2px var(--primary300);
+  }
+
+  .avatar-meta,
+  .card-text {
+    color: var(--primary50);
+  }
+}
+
+.card:nth-child(2) {
+  background-color: var(--grey500);
+  color: var(--white);
+
+  .avatar-meta,
+  .card-text {
+    color: var(--grey100);
+  }
+}
+
+.card:nth-child(3) {
+  background-color: var(--white);
+  color: var(--grey500);
+
+  .avatar-meta,
+  .card-text {
+    color: var(--grey400);
+  }
+}
+
+.card:nth-child(4) {
+  background-color: var(--darkblue);
+  color: var(--white);
+
+  .avatar-img-wrapper {
+    box-shadow: 0 0 0 2px var(--primary500);
+  }
+
+  .card-heading {
+    color: var(--grey200);
+  }
+  .card-text {
+    color: var(--grey100);
+  }
+}
+
+.card:nth-child(5) {
+  background-color: var(--white);
+  color: var(--grey500);
+
+  .avatar-meta {
+    color: var(--grey300);
+  }
+
+  .card-text {
+    color: var(--grey400);
+  }
+}
+
+.card-avatar {
+  display: grid;
+  grid-template-areas:
+    "avatar-img avatar-name"
+    "avatar-img avatar-meta";
+  grid-template-columns: 28px auto;
+  gap: 4px 17px;
+}
+
+.avatar-img-wrapper {
+  grid-area: avatar-img;
+  align-self: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar-name {
+  grid-area: avatar-name;
+  font: var(--text-preset-2);
+}
+
+.avatar-meta {
+  grid-area: avatar-meta;
+  font: var(--text-preset-4);
+}
+
+.card-heading {
+  font: var(--text-preset-1);
+}
+
+.card-text {
+  font: var(--text-preset-3);
+}
+
+@media (width >= 768px) {
+  body {
+    padding-block: 83px 113px;
+  }
+
+  .cards {
+    max-width: 647px;
+    display: grid;
+    grid-template-areas:
+      "card1 card1"
+      "card2 card3"
+      "card4 card4"
+      "card5 card5";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .card {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card:nth-child(1) {
+    grid-area: card1;
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-size: 104px 102px;
+    background-repeat: no-repeat;
+    background-position: top 0 right 171px;
+  }
+  .card:nth-child(2) {
+    grid-area: card2;
+  }
+  .card:nth-child(3) {
+    grid-area: card3;
+  }
+  .card:nth-child(4) {
+    grid-area: card4;
+  }
+  .card:nth-child(5) {
+    grid-area: card5;
+  }
+}
+
+@media (width >= 1440px) {
+  .cards {
+    max-width: 1114px;
+    grid-template-areas:
+      "card1 card1 card2 card5"
+      "card3 card4 card4 card5";
+    grid-template-columns: 255px 253px 255px 255px;
+  }
+
+  .card:nth-child(1) {
+    background-position: top 0 right 60px;
+  }
 }
