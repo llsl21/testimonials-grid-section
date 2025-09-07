@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Barlow";
+  src: url("/images/fonts/Barlow-500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("/images/fonts/Barlow-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+:root {
+  --primary50: hsl(260deg 100% 95%);
+  --primary300: hsl(264deg 82% 80%);
+  --primary500: hsl(263deg 55% 52%);
+
+  --white: hsl(0deg 0% 100%);
+  --grey100: hsl(214deg 17% 92%);
+  --grey200: hsl(0deg 0% 81%);
+  --grey400: hsl(224deg 10% 45%);
+  --grey500: hsl(217deg 19% 35%);
+  --darkblue: hsl(219deg 29% 14%);
+  --black: hsl(0deg 0% 7%);
+
+  --text-preset-1: normal 600 20px / 1.2 "Barlow", sans-serif;
+  --text-preset-2: normal 500 13px / 1.1 "Barlow", sans-serif;
+  --text-preset-3: normal 500 13px / 1.4 "Barlow", sans-serif;
+  --text-preset-4: normal 500 11px / 1.1 "Barlow", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+}
