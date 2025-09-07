@@ -210,6 +210,9 @@ img {
 }
 
 @media (width >= 1440px) {
+  body {
+    padding-block: 229px 218px;
+  }
   .cards {
     max-width: 1114px;
     grid-template-areas:
